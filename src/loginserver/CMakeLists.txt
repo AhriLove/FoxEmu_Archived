@@ -7,4 +7,37 @@
 # This program is distributed in the hope that it will be useful, but
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-e
+
+IF(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  SET(CMAKE_CXX_FLAGS "-g -std=c++11 -pedantic")
+ELSEIF(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+  SET(CMAKE_CXX_FLAGS "/EHsc") #So it doesn't constantly throw warnings
+ELSEIF(CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
+  IF(WIN32)
+    SET(CMAKE_CXX_FLAGS "/Qstd=c++11")
+  ELSE()
+    SET(CMAKE_CXX_FLAGS "-std=c++11")
+  ENDIF()
+ELSEIF(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+  SET(CMAKE_CXX_FLAGS "-std=c++11")
+ENDIF()
+
+file(GLOB loginserver_main *.cpp *.h)
+
+set(loginserver_SRCS
+    ${loginserver_SRCS}
+    ${loginserver_main}
+)
+
+if( WIN32 )
+    if ( MSVC )
+        set(loginserver_SRCS
+            ${loginserver_SRCS}
+            loginserver.rc
+        )
+    endif ()
+endif()
+
+add_executable(loginserver
+    ${loginserver_SRCS}
+)

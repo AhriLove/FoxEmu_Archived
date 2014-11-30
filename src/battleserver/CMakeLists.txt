@@ -1,0 +1,43 @@
+# Copyright (C) 2014 FoxCore <Website in development>
+#
+# This file is free software; as a special exception the author gives
+# unlimited permission to copy and/or distribute it, with or without
+# modifications, as long as this notice is preserved.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+IF(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  SET(CMAKE_CXX_FLAGS "-g -std=c++11 -pedantic")
+ELSEIF(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+  SET(CMAKE_CXX_FLAGS "/EHsc") #So it doesn't constantly throw warnings
+ELSEIF(CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
+  IF(WIN32)
+    SET(CMAKE_CXX_FLAGS "/Qstd=c++11")
+  ELSE()
+    SET(CMAKE_CXX_FLAGS "-std=c++11")
+  ENDIF()
+ELSEIF(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+  SET(CMAKE_CXX_FLAGS "-std=c++11")
+ENDIF()
+
+file(GLOB sources_localdir *.cpp *.h)
+
+set(battleserver_SRCS
+    ${battleserver_SRCS}
+    ${sources_localdir}
+)
+
+if( WIN32 )
+    if ( MSVC )
+        set(battleserver_SRCS
+            ${battleserver_SRCS}
+            battleserver.rc
+        )
+    endif ()
+endif()
+
+add_executable(battleserver
+    ${battleserver_SRCS}
+)
