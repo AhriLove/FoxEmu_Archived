@@ -21,6 +21,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <signal.h>
+#include "Common.h"
 
 #define REFRESH_RATE 16666 // 60 fps
 
@@ -46,8 +47,7 @@ void Loop()
 
 int main(int argc, char ** argv)
 {
-    printf("\n");
-    printf("         /\\   /\\                 _____          ____\n");
+    printf("\n         /\\   /\\                 _____          ____\n");
     printf("        // \\_// \\      ____     |  ___|____  __/ ___|___  _ __ ___\n");
     printf("        \\_     _/     /   /     | |_ / _ \\ \\/ / |   / _ \\| '__/ _ \\\n");
     printf("         / * * \\     /^^^]      |  _| (_) >  <| |__| (_) | | |  __/\n");
@@ -55,7 +55,9 @@ int main(int argc, char ** argv)
     printf("          /   \\_     [   /\n");
     printf("          \\     \\_  /  /         League of Legends server emulator\n");
     printf("           [ [ /  \\/ _/      (c)2014 FoxCore <http://www.foxcore.org/>\n");
-    printf("          _[ [ \\  /_/            Login server daemon, rev xxxxxxx\n\n");
+    printf("          _[ [ \\  /_/                   Login server daemon\n\n");
+
+    printf("%s\n", _FULLVERSION);
 
     Loop();
 

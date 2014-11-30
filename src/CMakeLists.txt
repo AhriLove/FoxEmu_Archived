@@ -8,5 +8,12 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-add_subdirectory(battleserver)
-add_subdirectory(loginserver)
+add_subdirectory(genrev)
+
+if (LOGINSERVER)
+    add_subdirectory(loginserver)
+endif()
+
+if (BATTLESERVER)
+    add_subdirectory(battleserver)
+endif()

@@ -29,6 +29,12 @@ set(battleserver_SRCS
     ${sources_localdir}
 )
 
+include_directories(
+  ${CMAKE_BINARY_DIR}
+  ${CMAKE_SOURCE_DIR}/src/shared
+  ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
 if( WIN32 )
     if ( MSVC )
         set(battleserver_SRCS
@@ -41,3 +47,5 @@ endif()
 add_executable(battleserver
     ${battleserver_SRCS}
 )
+
+add_dependencies(battleserver revision.h)

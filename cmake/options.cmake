@@ -8,17 +8,6 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-file(GLOB sources_localdir *.cpp *.h)
-
-set(shared_STAT_SRCS
-  ${shared_STAT_SRCS}
-  ${sources_localdir}
-)
-include_directories(
-  ${CMAKE_BINARY_DIR}
-  ${CMAKE_SOURCE_DIR}/src/
-  ${CMAKE_CURRENT_SOURCE_DIR}
-)
-add_library(shared STATIC
-  ${shared_STAT_SRCS}
-)
+option(LOGINSERVER      "Build loginserver"                                           1)
+option(BATTLESERVER     "Build battleserver"                                          1)
+option(WITHOUT_GIT      "Disable the GIT testing routines"                            0)

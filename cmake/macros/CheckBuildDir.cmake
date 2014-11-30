@@ -8,17 +8,16 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-file(GLOB sources_localdir *.cpp *.h)
+#
+# Force out-of-source build
+#
 
-set(shared_STAT_SRCS
-  ${shared_STAT_SRCS}
-  ${sources_localdir}
-)
-include_directories(
-  ${CMAKE_BINARY_DIR}
-  ${CMAKE_SOURCE_DIR}/src/
-  ${CMAKE_CURRENT_SOURCE_DIR}
-)
-add_library(shared STATIC
-  ${shared_STAT_SRCS}
-)
+string(COMPARE EQUAL "${CMAKE_SOURCE_DIR}" "${CMAKE_BINARY_DIR}" BUILDING_IN_SOURCE)
+
+if( BUILDING_IN_SOURCE )
+  message(FATAL_ERROR "
+    This project requires an out of source build. Remove the file 'CMakeCache.txt'
+    found in this directory before continuing, create a separate build directory
+    and run 'cmake path_to_project [options]' from there.
+  ")
+endif()
