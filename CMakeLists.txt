@@ -48,5 +48,8 @@ include(cmake/genrev.cmake)
 # print out the results before continuing
 include(cmake/showoptions.cmake)
 
+# Add dependencies
+add_subdirectory(dep)
+
 # Add core sources
 add_subdirectory(src)
