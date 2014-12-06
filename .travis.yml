@@ -1,0 +1,20 @@
+language: cpp
+compiler:
+- clang
+
+git:
+    depth: 1
+
+before_install:
+- echo "yes" | sudo add-apt-repository ppa:kalakris/cmake
+- echo "yes" | sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+- sudo apt-get -qq update
+- sudo apt-get -qq install build-essential libtool gcc-4.8 g++-4.8 make cmake
+
+install:
+- mkdir bin
+- cd bin
+- cmake ../ -DLOGINSERVER=1 -DBATTLESERVER=1 -DCMAKE_BUILD_TYPE=Release
+
+script:
+- make -j 10
