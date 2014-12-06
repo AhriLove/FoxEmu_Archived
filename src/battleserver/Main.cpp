@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 FoxCore <Website in development>
+ * Copyright (C) 2014 FoxEmu <Website in development>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -47,15 +47,15 @@ void Loop()
 
 int main(int argc, char ** argv)
 {
-    printf("\n         /\\   /\\                 _____          ____\n");
-    printf("        // \\_// \\      ____     |  ___|____  __/ ___|___  _ __ ___\n");
-    printf("        \\_     _/     /   /     | |_ / _ \\ \\/ / |   / _ \\| '__/ _ \\\n");
-    printf("         / * * \\     /^^^]      |  _| (_) >  <| |__| (_) | | |  __/\n");
-    printf("         \\_\\O/_/     [   ]      |_|  \\___/_/\\_\\\\____\\___/|_|  \\___|\n");
+    printf("\n         /\\   /\\                 _____         _____                 \n");
+    printf("        // \\_// \\      ____     |  ___|____  _| ____|_ __ ___  _   _ \n");
+    printf("        \\_     _/     /   /     | |_ / _ \\ \\/ /  _| | '_ ` _ \\| | | |\n");
+    printf("         / * * \\     /^^^]      |  _| (_) >  <| |___| | | | | | |_| |\n");
+    printf("         \\_\\O/_/     [   ]      |_|  \\___/_/\\_\\_____|_| |_| |_|\\__,_|\n");
     printf("          /   \\_     [   /\n");
-    printf("          \\     \\_  /  /         League of Legends server emulator\n");
-    printf("           [ [ /  \\/ _/      (c)2014 FoxCore <http://www.foxcore.org/>\n");
-    printf("          _[ [ \\  /_/                  Battle server daemon\n\n");
+    printf("          \\     \\_  /  /          League of Legends server emulator\n");
+    printf("           [ [ /  \\/ _/        (c)2014 FoxEmu <Website in development>\n");
+    printf("          _[ [ \\  /_/                   Battle server daemon\n\n");
 
     printf("%s\n", _FULLVERSION);
 

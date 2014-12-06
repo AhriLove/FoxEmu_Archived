@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 FoxCore <Website in development>
+ * Copyright (C) 2014 FoxEmu <Website in development>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -74,12 +74,12 @@ BEGIN
         BLOCK "080004b0"
         BEGIN
             VALUE "CompanyName",        VER_COMPANYNAME_STR
-            VALUE "FileDescription",    "FoxCore login server daemon"
+            VALUE "FileDescription",    "FoxEmu login server daemon"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "loginserver"
             VALUE "LegalCopyright",     VER_LEGALCOPYRIGHT_STR
             VALUE "OriginalFilename",   "loginserver.exe"
-            VALUE "ProductName",        "FoxCore login server daemon"
+            VALUE "ProductName",        "FoxEmu login server daemon"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

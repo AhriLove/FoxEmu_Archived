@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 FoxCore <Website in development>
+ * Copyright (C) 2014 FoxEmu <Website in development>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the

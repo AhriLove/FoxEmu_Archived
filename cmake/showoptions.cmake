@@ -1,8 +1,8 @@
 # output generic information about the core and buildtype chosen
 message("")
-message("* FoxCore revision       : ${rev_hash} ${rev_date} (${rev_branch} branch)")
+message("* FoxEmu revision       : ${rev_hash} ${rev_date} (${rev_branch} branch)")
 if( UNIX )
-  message("* FoxCore buildtype        : ${CMAKE_BUILD_TYPE}")
+  message("* FoxEmu buildtype        : ${CMAKE_BUILD_TYPE}")
 endif()
 message("")
 

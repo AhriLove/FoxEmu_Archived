@@ -1,4 +1,4 @@
-# Copyright (C) 2014 FoxCore <Website in development>
+# Copyright (C) 2014 FoxEmu <Website in development>
 #
 # This file is free software; as a special exception the author gives
 # unlimited permission to copy and/or distribute it, with or without
@@ -9,7 +9,7 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 # Project name
-project(FoxCore)
+project(FoxEmu)
 
 # CMake policies (can not be handled elsewhere)
 cmake_minimum_required(VERSION 2.8.9)
