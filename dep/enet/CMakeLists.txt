@@ -8,10 +8,10 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-file(GLOB raf_sources *.cpp *.h)
+file(GLOB enet_sources *.cpp *.h)
 
-set(raf_STAT_SRCS
-    ${raf_sources}
+set(enet_STAT_SRCS
+    ${enet_sources}
 )
 
 include_directories(
@@ -19,6 +19,6 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-add_library(raf STATIC ${raf_STAT_SRCS})
+add_library(enet STATIC ${enet_STAT_SRCS})
 
-set_target_properties(raf PROPERTIES LINKER_LANGUAGE CXX)
+set_target_properties(enet PROPERTIES LINKER_LANGUAGE CXX)

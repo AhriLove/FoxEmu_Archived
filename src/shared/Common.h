@@ -13,4 +13,6 @@
 #  define _FULLVERSION "FoxEmu rev. " VER_PRODUCTVERSION_STR " (Unix)"
 #endif
 
+#define CLIENTVERSION "Version 4.20.0.315 [PUBLIC]"
+
 #endif //FOXEMU_COMMON_H

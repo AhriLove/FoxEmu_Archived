@@ -8,12 +8,13 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-if( CMAKE_COMPILER_IS_GNUCXX )
+if (CMAKE_COMPILER_IS_GNUCXX)
     add_definitions(--no-warnings)
-elseif( MSVC )
+elseif (MSVC)
     add_definitions(/W0)
 endif()
 
-if(LOGINSERVER OR BATTLESERVER)
+if (LOGINSERVER OR BATTLESERVER)
+    add_subdirectory(enet)
     add_subdirectory(raf)
 endif()

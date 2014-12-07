@@ -8,12 +8,12 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-IF(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+IF (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     SET(CMAKE_CXX_FLAGS "-g -std=c++11 -pedantic")
-ELSEIF(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+ELSEIF (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     SET(CMAKE_CXX_FLAGS "/EHsc") #So it doesn't constantly throw warnings
-ELSEIF(CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
-    IF(WIN32)
+ELSEIF (CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
+    IF (WIN32)
         SET(CMAKE_CXX_FLAGS "/Qstd=c++11")
     ELSE()
         SET(CMAKE_CXX_FLAGS "-std=c++11")
@@ -31,18 +31,19 @@ set(battleserver_SRCS
 
 include_directories(
     ${CMAKE_BINARY_DIR}
+    ${CMAKE_SOURCE_DIR}/dep/enet
     ${CMAKE_SOURCE_DIR}/dep/raf
     ${CMAKE_SOURCE_DIR}/src/shared
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-if( WIN32 )
-    if ( MSVC )
+if (WIN32)
+    if (MSVC)
         set(battleserver_SRCS
             ${battleserver_SRCS}
             battleserver.rc
         )
-    endif ()
+    endif()
 endif()
 
 add_executable(battleserver
@@ -52,5 +53,6 @@ add_executable(battleserver
 add_dependencies(battleserver revision.h)
 
 target_link_libraries(battleserver
+    enet
     raf
 )
