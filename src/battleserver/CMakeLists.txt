@@ -67,4 +67,5 @@ target_link_libraries(battleserver
     raf
     game
     scripts
+    shared
 )

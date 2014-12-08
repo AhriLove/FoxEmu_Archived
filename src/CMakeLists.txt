@@ -9,6 +9,7 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 add_subdirectory(genrev)
+add_subdirectory(shared)
 
 if (LOGINSERVER)
     add_subdirectory(loginserver)
