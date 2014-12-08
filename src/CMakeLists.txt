@@ -16,4 +16,5 @@ endif()
 
 if (BATTLESERVER)
     add_subdirectory(battleserver)
+    add_subdirectory(game)
 endif()
