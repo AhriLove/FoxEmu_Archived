@@ -33,6 +33,16 @@ include_directories(
     ${CMAKE_BINARY_DIR}
     ${CMAKE_SOURCE_DIR}/dep/enet
     ${CMAKE_SOURCE_DIR}/dep/raf
+    ${CMAKE_SOURCE_DIR}/src/game/Chat
+    ${CMAKE_SOURCE_DIR}/src/game/Entities
+    ${CMAKE_SOURCE_DIR}/src/game/Entities/Champion
+    ${CMAKE_SOURCE_DIR}/src/game/Entities/Fountain
+    ${CMAKE_SOURCE_DIR}/src/game/Entities/Minion
+    ${CMAKE_SOURCE_DIR}/src/game/Entities/Turret
+    ${CMAKE_SOURCE_DIR}/src/game/Entities/Unit
+    ${CMAKE_SOURCE_DIR}/src/game/Map
+    ${CMAKE_SOURCE_DIR}/src/game/Network
+    ${CMAKE_SOURCE_DIR}/src/game/Spells
     ${CMAKE_SOURCE_DIR}/src/shared
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
@@ -55,4 +65,6 @@ add_dependencies(battleserver revision.h)
 target_link_libraries(battleserver
     enet
     raf
+    game
+    scripts
 )
