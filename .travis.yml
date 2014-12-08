@@ -6,6 +6,7 @@ git:
     depth: 1
 
 before_install:
+- git fetch -t
 - echo "yes" | sudo add-apt-repository ppa:kalakris/cmake
 - echo "yes" | sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 - sudo apt-get -qq update

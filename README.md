@@ -1,6 +1,6 @@
 FoxEmu
 =======
-Build Status: [![Build Status](https://travis-ci.org/FoxEmu/FoxEmu.svg)](https://travis-ci.org/FoxEmu/FoxEmu)
+[![Build Status](https://travis-ci.org/FoxEmu/FoxEmu.svg)](https://travis-ci.org/FoxEmu/FoxEmu)
 
 FoxEmu is a server emulator for League of Leguends based mostly in C++.
 
