@@ -75,13 +75,12 @@ static int enet_protocol_dispatch_incoming_commands(ENetHost* host, ENetEvent* e
                 return 1;
             }
 
-
             case ENET_PEER_STATE_CONNECTED:
             {
                 if (enet_list_empty(&peer->dispatchedCommands))
                     continue;
 
-                event->packet = enet_peer_receive (peer, & event->channelID);
+                event->packet = enet_peer_receive(peer, &event->channelID);
 
                 if (event->packet == NULL)
                     continue;
@@ -97,10 +96,6 @@ static int enet_protocol_dispatch_incoming_commands(ENetHost* host, ENetEvent* e
 
                 return 1;
             }
-
-            case ENET_PEER_STATE_DISCONNECTED:
-            case ENET_PEER_STATE_CONNECTING:
-                break;
 
             default:
                 break;
