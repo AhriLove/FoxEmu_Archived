@@ -98,6 +98,11 @@ static int enet_protocol_dispatch_incoming_commands(ENetHost* host, ENetEvent* e
                 return 1;
             }
 
+            case ENET_PEER_STATE_DISCONNECTED:
+            case ENET_PEER_STATE_CONNECTING:
+            case ENET_PEER_STATE_CONNECTION_PENDING:
+                break;
+
             default:
                 break;
        }
