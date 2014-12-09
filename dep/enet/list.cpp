@@ -24,7 +24,7 @@
     @ingroup private
     @{
 */
-void enet_list_clear(ENetList *list)
+void enet_list_clear(ENetList* list)
 {
     list->sentinel.next = &list->sentinel;
     list->sentinel.previous = & list->sentinel;
@@ -43,7 +43,7 @@ ENetListIterator enet_list_insert(ENetListIterator position, void* data)
     return result;
 }
 
-void *enet_list_remove(ENetListIterator position)
+void* enet_list_remove(ENetListIterator position)
 {
     position->previous->next = position->next;
     position->next->previous = position->previous;
@@ -51,8 +51,7 @@ void *enet_list_remove(ENetListIterator position)
     return position;
 }
 
-ENetListIterator
-enet_list_move(ENetListIterator position, void* dataFirst, void* dataLast)
+ENetListIterator enet_list_move(ENetListIterator position, void* dataFirst, void* dataLast)
 {
     ENetListIterator first = (ENetListIterator)dataFirst, last = (ENetListIterator)dataLast;
 

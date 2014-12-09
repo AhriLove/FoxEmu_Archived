@@ -45,7 +45,7 @@ enum
 typedef struct
 {
     size_t dataLength;
-    void * data;
+    void* data;
 } ENetBuffer;
 
 #define ENET_CALLBACK __cdecl

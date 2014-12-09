@@ -8,10 +8,10 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-file(GLOB enet_sources *.cpp *.h)
+file(GLOB sources_enet *.cpp *.h)
 
 set(enet_STAT_SRCS
-    ${enet_sources}
+    ${sources_enet}
 )
 
 include_directories(
@@ -19,6 +19,14 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
+if (WIN32)
+    set(enet_win_libs odbc32 odbccp32 winmm ws2_32)
+endif()
+
 add_library(enet STATIC ${enet_STAT_SRCS})
 
 set_target_properties(enet PROPERTIES LINKER_LANGUAGE CXX)
+
+target_link_libraries(enet
+    ${enet_win_libs}
+)
