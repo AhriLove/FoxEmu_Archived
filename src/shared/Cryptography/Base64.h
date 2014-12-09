@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 FoxEmu <Website in development>
+ * Copyright (C) 2014 FoxEmu <http://www.foxemu.ovh/>
  * Copyright (C) 2004-2008 René Nyffenegger <rene.nyffenegger@adp-gmbh.ch>
  *
  * This program is free software; you can redistribute it and/or modify it

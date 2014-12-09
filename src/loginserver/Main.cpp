@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 FoxEmu <Website in development>
+ * Copyright (C) 2014 FoxEmu <http://www.foxemu.ovh/>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -54,7 +54,7 @@ int main(int argc, char ** argv)
     printf("         \\_\\O/_/     [   ]      |_|  \\___/_/\\_\\_____|_| |_| |_|\\__,_|\n");
     printf("          /   \\_     [   /\n");
     printf("          \\     \\_  /  /          League of Legends server emulator\n");
-    printf("           [ [ /  \\/ _/        (c)2014 FoxEmu <Website in development>\n");
+    printf("           [ [ /  \\/ _/        (c)2014 FoxEmu <http://www.foxemu.ovh/>\n");
     printf("          _[ [ \\  /_/                   Login server daemon\n\n");
 
     printf("%s\n", _FULLVERSION);

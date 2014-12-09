@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 FoxEmu <Website in development>
+ * Copyright (C) 2014 FoxEmu <http://www.foxemu.ovh/>
  * Copyright (C) 2002-2014 Lee Salzman <http://enet.bespin.org/>
  *
  * This program is free software; you can redistribute it and/or modify it
