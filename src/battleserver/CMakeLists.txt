@@ -70,3 +70,25 @@ target_link_libraries(battleserver
     shared
     ${Boost_LIBRARIES}
 )
+
+if ( WIN32 )
+    if ( MSVC )
+        add_custom_command(TARGET battleserver
+            POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/battleserver.conf.dist ${CMAKE_BINARY_DIR}/bin/$(ConfigurationName)/
+        )
+    elseif ( MINGW )
+        add_custom_command(TARGET battleserver
+            POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/battleserver.conf.dist ${CMAKE_BINARY_DIR}/bin/
+        )
+    endif()
+endif()
+
+if( UNIX )
+    install(TARGETS battleserver DESTINATION bin)
+    install(FILES battleserver.conf.dist DESTINATION ${CONF_DIR})
+elseif( WIN32 )
+    install(TARGETS battleserver DESTINATION "${CMAKE_INSTALL_PREFIX}")
+    install(FILES battleserver.conf.dist DESTINATION "${CMAKE_INSTALL_PREFIX}")
+endif()
