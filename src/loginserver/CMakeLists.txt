@@ -8,19 +8,19 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-IF(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    SET(CMAKE_CXX_FLAGS "-g -std=c++11 -pedantic")
-ELSEIF(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-    SET(CMAKE_CXX_FLAGS "/EHsc") #So it doesn't constantly throw warnings
-ELSEIF(CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
-    IF(WIN32)
-        SET(CMAKE_CXX_FLAGS "/Qstd=c++11")
-    ELSE()
-        SET(CMAKE_CXX_FLAGS "-std=c++11")
-    ENDIF()
-ELSEIF(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-    SET(CMAKE_CXX_FLAGS "-std=c++11")
-ENDIF()
+if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    set(CMAKE_CXX_FLAGS "-g -std=c++11 -pedantic")
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    set(CMAKE_CXX_FLAGS "/EHsc") #So it doesn't constantly throw warnings
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
+    if (WIN32)
+        set(CMAKE_CXX_FLAGS "/Qstd=c++11")
+    else ()
+        set(CMAKE_CXX_FLAGS "-std=c++11")
+    endif()
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    set(CMAKE_CXX_FLAGS "-std=c++11")
+endif()
 
 file(GLOB loginserver_files *.cpp *.h)
 
@@ -36,7 +36,7 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-if( WIN32 )
+if ( WIN32 )
     if ( MSVC )
         set(loginserver_SRCS
             ${loginserver_SRCS}
@@ -53,4 +53,5 @@ add_dependencies(loginserver revision.h)
 
 target_link_libraries(loginserver
     raf
+    ${Boost_LIBRARIES}
 )

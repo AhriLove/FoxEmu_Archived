@@ -68,4 +68,5 @@ target_link_libraries(battleserver
     game
     scripts
     shared
+    ${Boost_LIBRARIES}
 )

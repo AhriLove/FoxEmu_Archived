@@ -14,6 +14,7 @@ project(FoxEmu)
 # CMake policies (can not be handled elsewhere)
 cmake_minimum_required(VERSION 2.8.9)
 cmake_policy(SET CMP0005 OLD)
+
 if(POLICY CMP0043)
   cmake_policy(SET CMP0043 OLD) # Disable 'Ignore COMPILE_DEFINITIONS_<Config> properties'
 endif(POLICY CMP0043)
@@ -35,8 +36,13 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/macros")
 if( NOT CMAKE_BUILD_TYPE )
   set(CMAKE_BUILD_TYPE "Release")
 endif()
+
+include(CheckPlatform)
+
 # set default buildoptions and print them
 include(cmake/options.cmake)
+
+include(ConfigureBoost)
 
 if(NOT WITHOUT_GIT)
   find_package(Git)
